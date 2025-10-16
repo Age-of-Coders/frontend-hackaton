@@ -1,4 +1,4 @@
-export type UserRole = "user" | "admin";
+export type UserRole = "user" | "medic" | "admin";
 
 export interface User {
   id: string;
@@ -29,6 +29,7 @@ export interface RegisterCredentials {
   username: string;
   email: string;
   password: string;
+  role: UserRole;
 }
 
 export interface AuthContextType extends AuthState {

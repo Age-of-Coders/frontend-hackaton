@@ -37,6 +37,7 @@ interface RegisterData {
   username: string;
   email: string;
   password: string;
+  role: string; // "user" | "medic"
 }
 
 interface LoginData {
@@ -49,21 +50,21 @@ interface LoginResponse {
   id: string;
   email: string;
   name: string;
-  role: "user" | "admin";
+  role: "user" | "medic" | "admin";
 }
 
 interface RegisterResponse {
   id: string;
   email: string;
   name: string;
-  role: "user" | "admin";
+  role: "user" | "medic" | "admin";
 }
 
 interface CheckStatusResponse {
   id: string;
   email: string;
   name: string;
-  role: "user" | "admin";
+  role: "user" | "medic" | "admin";
 }
 
 // Servicios de autenticación

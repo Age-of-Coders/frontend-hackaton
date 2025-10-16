@@ -14,6 +14,13 @@ import {
   FieldLabel,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { useAuth } from "@/contexts/auth/auth-provider"
 import { useState, useEffect } from "react"
 import { useNavigate, Link } from "react-router-dom"
@@ -28,6 +35,7 @@ export function SignupForm({
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
+  const [userType, setUserType] = useState<"user" | "medic">("user")
   const [validationError, setValidationError] = useState("")
   const [showError, setShowError] = useState(true)
 
@@ -59,7 +67,7 @@ export function SignupForm({
     }
 
     try {
-      await register({ username, email, password })
+      await register({ username, email, password, role: userType })
       navigate("/") // Redirigir al home después del registro exitoso
     } catch (error) {
       console.error("Error al registrar:", error)
@@ -93,6 +101,21 @@ export function SignupForm({
                   onChange={(e) => setUsername(e.target.value)}
                   required
                 />
+              </Field>
+              <Field>
+                <FieldLabel htmlFor="userType">Tipo de usuario</FieldLabel>
+                <Select value={userType} onValueChange={(value) => setUserType(value as "user" | "medic")}>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Selecciona el tipo de usuario" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="user">Paciente</SelectItem>
+                    <SelectItem value="medic">Médico</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FieldDescription>
+                  Selecciona si te registrarás como paciente o médico
+                </FieldDescription>
               </Field>
               <Field>
                 <FieldLabel htmlFor="email">Correo electrónico</FieldLabel>

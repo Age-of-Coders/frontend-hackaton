@@ -35,6 +35,7 @@ export const MOCK_NAV_MAIN = [
   {
     title: "Conecta",
     icon: Handshake,
+    url: "/experiences",
     isActive: true,
     items: [
       {
