@@ -1,4 +1,16 @@
-import { LoginPage, LoadingPage, RegisterPage, Home, NotFoundPage, Dashboard, Playground, Models, Documentation, Settings } from '@/pages';
+import {
+    LoginPage,
+    LoadingPage,
+    RegisterPage,
+    Home,
+    NotFoundPage,
+    MedicPublications,
+    Experiences,
+    Favourites,
+    Publications,
+    Credentials,
+    Validations
+} from '@/pages';
 import Layout from '@/components/Layout';
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
@@ -16,11 +28,12 @@ export const AppRouter = () => {
                 <Route element={<PrivateRoutes />} >
                     <Route element={<Layout />}>
                         <Route path="/" element={<Home />} />
-                        <Route path="/dashboard" element={<Dashboard />} />
-                        <Route path="/playground" element={<Playground />} />
-                        <Route path="/models" element={<Models />} />
-                        <Route path="/documentation" element={<Documentation />} />
-                        <Route path="/settings" element={<Settings />} />
+                        <Route path="/experiences" element={<Experiences />} />
+                        <Route path="/medic-publications" element={<MedicPublications />} />
+                        <Route path="/favourites" element={<Favourites />} />
+                        <Route path="/publications" element={<Publications />} />
+                        <Route path="/credentials" element={<Credentials />} />
+                        <Route path="/validations" element={<Validations />} />
                     </Route>
                 </Route>
                 <Route path="*" element={<NotFoundPage />} />

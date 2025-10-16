@@ -1,9 +1,9 @@
-export default function Settings() {
+export default function Validations() {
     return (
         <div className="space-y-4">
-            <h1 className="text-3xl font-bold">Configuración</h1>
+            <h1 className="text-3xl font-bold">Validaciones</h1>
             <p className="text-muted-foreground">
-                Administra la configuración de tu cuenta y preferencias.
+                Administra las validaciones de tu cuenta y preferencias.
             </p>
             <div className="space-y-4">
                 <div className="bg-muted/50 rounded-xl p-6">

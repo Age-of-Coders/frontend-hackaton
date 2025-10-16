@@ -5,14 +5,7 @@
  * Modifica estos valores para personalizar la aplicación según tus necesidades.
  */
 
-import {
-  BookOpen,
-  Bot,
-  LifeBuoy,
-  Send,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react";
+import { Fingerprint, Handshake, HeartPulse, ShieldUser } from "lucide-react";
 
 /**
  * Información del usuario simulado
@@ -40,109 +33,37 @@ export const MOCK_USER = {
  */
 export const MOCK_NAV_MAIN = [
   {
-    title: "Playground",
-    url: "/playground",
-    icon: SquareTerminal,
-    // isActive: true,
-    // items: [
-    //   {
-    //     title: "Historial",
-    //     url: "/playground/history",
-    //   },
-    //   {
-    //     title: "Destacados",
-    //     url: "/playground/featured",
-    //   },
-    //   {
-    //     title: "Configuración",
-    //     url: "/playground/settings",
-    //   },
-    // ],
+    title: "Conecta",
+    icon: Handshake,
+    isActive: true,
+    items: [
+      {
+        title: "Experiencias",
+        url: "/experiences",
+      },
+      {
+        title: "Publicaciones médicas",
+        url: "/medic-publications",
+      },
+      {
+        title: "Favoritos",
+        url: "/favourites",
+      },
+    ],
   },
   {
-    title: "Models",
-    url: "/models",
-    icon: Bot,
-    // items: [
-    //   {
-    //     title: "Genesis",
-    //     url: "/models/genesis",
-    //   },
-    //   {
-    //     title: "Explorer",
-    //     url: "/models/explorer",
-    //   },
-    //   {
-    //     title: "Quantum",
-    //     url: "/models/quantum",
-    //   },
-    // ],
+    title: "Publicaciones",
+    url: "/publications",
+    icon: HeartPulse,
   },
   {
-    title: "Documentación",
-    url: "/documentation",
-    icon: BookOpen,
-    // items: [
-    //   {
-    //     title: "Introducción",
-    //     url: "/documentation/intro",
-    //   },
-    //   {
-    //     title: "Comenzar",
-    //     url: "/documentation/getting-started",
-    //   },
-    //   {
-    //     title: "Tutoriales",
-    //     url: "/documentation/tutorials",
-    //   },
-    //   {
-    //     title: "Registro de cambios",
-    //     url: "/documentation/changelog",
-    //   },
-    // ],
+    title: "Credenciales",
+    url: "/credentials",
+    icon: Fingerprint,
   },
   {
-    title: "Settings",
-    url: "/settings",
-    icon: Settings2,
-    // items: [
-    //   {
-    //     title: "General",
-    //     url: "/settings/general",
-    //   },
-    //   {
-    //     title: "Equipo",
-    //     url: "/settings/team",
-    //   },
-    //   {
-    //     title: "Facturación",
-    //     url: "/settings/billing",
-    //   },
-    //   {
-    //     title: "Límites",
-    //     url: "/settings/limits",
-    //   },
-    // ],
-  },
-];
-
-/**
- * Elementos de navegación secundaria
- *
- * @description Elementos de navegación secundarios que aparecen al final del sidebar
- * @property {string} title - Título del elemento
- * @property {string} url - URL de la ruta
- * @property {LucideIcon} icon - Icono de Lucide React
- */
-export const MOCK_NAV_SECONDARY = [
-  {
-    title: "Support",
-    url: "/support",
-    icon: LifeBuoy,
-  },
-  {
-    title: "Feedback",
-    url: "/feedback",
-    icon: Send,
+    title: "Validaciones",
+    url: "/validations",
+    icon: ShieldUser,
   },
 ];

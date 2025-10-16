@@ -1,7 +1,7 @@
-export default function Documentation() {
+export default function Credentials() {
     return (
         <div className="space-y-4">
-            <h1 className="text-3xl font-bold">Documentación</h1>
+            <h1 className="text-3xl font-bold">Credenciales</h1>
             <p className="text-muted-foreground">
                 Aprende cómo usar la plataforma con nuestra documentación completa.
             </p>

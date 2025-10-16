@@ -31,15 +31,6 @@ export const BREADCRUMB_TEXT = {
 };
 
 /**
- * Etiquetas de secciones del sidebar
- *
- * @description Títulos de las diferentes secciones del sidebar
- */
-export const SIDEBAR_LABELS = {
-  navigation: "Area de Navegación",
-};
-
-/**
  * Textos del menú de usuario
  *
  * @description Etiquetas utilizadas en el dropdown del usuario
