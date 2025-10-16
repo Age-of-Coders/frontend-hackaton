@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { useAuth } from "@/contexts/auth/auth-provider"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useNavigate, Link } from "react-router-dom"
 
 export function SignupForm({
@@ -29,6 +29,18 @@ export function SignupForm({
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
   const [validationError, setValidationError] = useState("")
+  const [showError, setShowError] = useState(true)
+
+  useEffect(() => {
+    if (error) {
+      setShowError(true)
+      const timer = setTimeout(() => {
+        setShowError(false)
+      }, 4000)
+
+      return () => clearTimeout(timer)
+    }
+  }, [error])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -66,7 +78,7 @@ export function SignupForm({
         <CardContent>
           <form onSubmit={handleSubmit}>
             <FieldGroup>
-              {(error || validationError) && (
+              {(error || validationError) && showError && (
                 <div className="text-red-500 text-sm p-2 bg-red-50 rounded">
                   {error || validationError}
                 </div>

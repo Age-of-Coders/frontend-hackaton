@@ -5,6 +5,7 @@ import {
     SidebarProvider,
 } from "@/components/ui/sidebar"
 import { Outlet } from "react-router-dom"
+import { Chat } from "./Chat/Chat"
 
 export default function Layout() {
     return (
@@ -16,6 +17,7 @@ export default function Layout() {
                     <SidebarInset>
                         <div className="flex flex-1 flex-col gap-4 p-4">
                             <Outlet />
+                            <Chat />
                         </div>
                     </SidebarInset>
                 </div>

@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { useAuth } from "@/contexts/auth/auth-provider"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useNavigate, Link } from "react-router-dom"
 
 export function LoginForm({
@@ -26,6 +26,18 @@ export function LoginForm({
   const navigate = useNavigate()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [showError, setShowError] = useState(true)
+
+  useEffect(() => {
+    if (error) {
+      setShowError(true)
+      const timer = setTimeout(() => {
+        setShowError(false)
+      }, 4000)
+
+      return () => clearTimeout(timer)
+    }
+  }, [error])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -50,7 +62,7 @@ export function LoginForm({
         <CardContent>
           <form onSubmit={handleSubmit}>
             <FieldGroup>
-              {error && (
+              {error && showError && (
                 <div className="text-red-500 text-sm p-2 bg-red-50 rounded">
                   {error}
                 </div>
