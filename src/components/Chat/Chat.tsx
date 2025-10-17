@@ -20,7 +20,7 @@ export const Chat = () => {
             metadata: {},
             showWelcomeScreen: false,
             defaultLanguage: 'en',
-            initialMessages: [],
+            initialMessages: ['¡Hola!♥️ Soy tu espacio de contención emocional. Estoy aquí para escucharte y acompañarte en lo que sientas respecto a vivir con diabetes.'],
             i18n: {
                 en: {
                     title: 'Asistente',
