@@ -53,14 +53,14 @@ export const MOCK_NAV_MAIN = [
     ],
   },
   {
-    title: "Publicaciones",
-    url: "/publications",
-    icon: HeartPulse,
-  },
-  {
     title: "Credenciales",
     url: "/credentials",
     icon: Fingerprint,
+  },
+  {
+    title: "Publicaciones",
+    url: "/publications",
+    icon: HeartPulse,
   },
   {
     title: "Validaciones",

@@ -90,7 +90,7 @@ export const useAuth = (): AuthContextType => {
 };
 
 // Hook para verificar si el usuario tiene un rol específico
-export const useRole = (requiredRole: 'user' | 'admin'): boolean => {
+export const useRole = (requiredRole: 'user' | 'medic' | 'admin'): boolean => {
     const { user } = useAuth();
     return user?.role === requiredRole;
 };
@@ -99,4 +99,16 @@ export const useRole = (requiredRole: 'user' | 'admin'): boolean => {
 export const useIsAdmin = (): boolean => {
     const { user } = useAuth();
     return user?.role === 'admin';
+};
+
+// Hook para verificar si el usuario es médico
+export const useIsMedic = (): boolean => {
+    const { user } = useAuth();
+    return user?.role === 'medic';
+};
+
+// Hook para verificar si el usuario es usuario regular
+export const useIsUser = (): boolean => {
+    const { user } = useAuth();
+    return user?.role === 'user';
 };
