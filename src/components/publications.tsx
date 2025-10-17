@@ -55,7 +55,7 @@ function Cards() {
     return (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {stories.map((story) => (
-                <Card key={story.id} className="flex flex-col">
+                <Card key={story.id} className="flex flex-col border-2 hover:shadow-lg transition-all duration-300">
                     <CardHeader>
                         <CardTitle>Anónimo</CardTitle>
                         <CardDescription>{formatDate(story.fecha)}</CardDescription>
@@ -65,28 +65,36 @@ function Cards() {
                             {story.texto_historia}
                         </p>
                     </CardContent>
-                    <CardFooter className="flex justify-between items-center gap-2">
+                    <CardFooter className="flex justify-between items-center gap-2 border-t pt-4">
                         <Button
-                            variant={story.isLiked ? "default" : "outline"}
+                            variant="outline"
                             size="sm"
                             onClick={() => handleLike(story.id)}
-                            className="flex items-center gap-2"
+                            className={`flex items-center gap-2 transition-all duration-300 ${story.isLiked
+                                    ? 'bg-rose-50 dark:bg-rose-950/20 text-rose-600 dark:text-rose-400 border-rose-200 dark:border-rose-800 hover:bg-rose-100 dark:hover:bg-rose-950/30'
+                                    : 'hover:bg-rose-50 dark:hover:bg-rose-950/10 hover:text-rose-600 dark:hover:text-rose-400 hover:border-rose-200 dark:hover:border-rose-800'
+                                }`}
                         >
                             <Heart
-                                className={`h-4 w-4 ${story.isLiked ? 'fill-current' : ''}`}
+                                className={`h-4 w-4 transition-all duration-300 ${story.isLiked ? 'fill-rose-600 dark:fill-rose-400' : ''
+                                    }`}
                             />
-                            <span>{story.likes}</span>
+                            <span className="font-medium">{story.likes}</span>
                         </Button>
                         <Button
-                            variant={story.isFavorite ? "default" : "outline"}
+                            variant="outline"
                             size="sm"
                             onClick={() => handleFavorite(story.id)}
-                            className="flex items-center gap-2"
+                            className={`flex items-center gap-2 transition-all duration-300 ${story.isFavorite
+                                    ? 'bg-amber-50 dark:bg-amber-950/20 text-amber-600 dark:text-amber-400 border-amber-200 dark:border-amber-800 hover:bg-amber-100 dark:hover:bg-amber-950/30'
+                                    : 'hover:bg-amber-50 dark:hover:bg-amber-950/10 hover:text-amber-600 dark:hover:text-amber-400 hover:border-amber-200 dark:hover:border-amber-800'
+                                }`}
                         >
                             <Star
-                                className={`h-4 w-4 ${story.isFavorite ? 'fill-current' : ''}`}
+                                className={`h-4 w-4 transition-all duration-300 ${story.isFavorite ? 'fill-amber-600 dark:fill-amber-400' : ''
+                                    }`}
                             />
-                            <span>{story.isFavorite ? 'Guardado' : 'Guardar'}</span>
+                            <span className="font-medium">{story.isFavorite ? 'Guardado' : 'Guardar'}</span>
                         </Button>
                     </CardFooter>
                 </Card>

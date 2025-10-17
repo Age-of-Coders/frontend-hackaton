@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Command } from "lucide-react"
+import { Command, HeartPulse } from "lucide-react"
 import { Link } from "react-router-dom"
 
 import { NavMain } from "@/components/nav-main"
@@ -30,11 +30,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <Link to="/">
-                <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                  <Command className="size-4" />
+                <div className="bg-rose-500 text-sidebar-primary-foreground flex aspect-square size-9 items-center justify-center rounded-lg">
+                  <HeartPulse className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">{COMPANY_INFO.name}</span>
+                  <span className="truncate font-bold">{COMPANY_INFO.name}</span>
                   <span className="truncate text-xs">{COMPANY_INFO.tier}</span>
                 </div>
               </Link>

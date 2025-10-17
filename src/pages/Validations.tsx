@@ -86,10 +86,12 @@ export default function Validations() {
 
     return (
         <div className="space-y-4">
-            <h1 className="text-3xl font-bold">Validaciones</h1>
-            <p className="text-muted-foreground">
-                Revisa y valida las solicitudes de certificados médicos pendientes.
-            </p>
+            <div className="text-center">
+                <h1 className="text-3xl font-bold">Validaciones</h1>
+                <p className="text-muted-foreground">
+                    Revisa y valida las solicitudes de certificados médicos pendientes.
+                </p>
+            </div>
 
             {validationRequests.length === 0 ? (
                 <Card>

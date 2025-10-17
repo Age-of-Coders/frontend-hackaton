@@ -14,7 +14,7 @@
  * @property {string} tier - Plan o nivel de suscripción (ej: "Enterprise", "Pro", "Free")
  */
 export const COMPANY_INFO = {
-  name: "Age of Coders",
+  name: "Rénova",
   tier: "Hackaton",
 };
 
